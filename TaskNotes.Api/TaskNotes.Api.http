@@ -1,0 +1,6 @@
+@TaskNotes.Api_HostAddress = http://localhost:5038
+
+GET {{TaskNotes.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
