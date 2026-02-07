@@ -1,34 +1,67 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using TaskNotes.Api.Data;
 using TaskNotes.Api.Dtos;
 using TaskNotes.Api.Services;
 
-namespace TaskNotes.Api.Controllers
+namespace TaskNotes.Api.Controllers;
+
+[ApiController]
+[Route("api/tasks")]
+public sealed class TasksController : ControllerBase
 {
-    [ApiController]
-    [Route("api/tasks")]
-    public sealed class TasksController : ControllerBase
+    private readonly ITaskService _tasks;
+
+    public TasksController(ITaskService tasks)
     {
-        private readonly ILogger<TasksController> _logger;
-        private readonly ITaskService _tasks;
+        _tasks = tasks;
+    }
 
-        public TasksController(ILogger<TasksController> logger, ITaskService tasks)
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<TaskItemReadDto>>> GetAll(CancellationToken cancellationToken)
+    {
+        var items = await _tasks.GetAllAsync(cancellationToken);
+        return Ok(items);
+    }
+
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<TaskItemReadDto>> GetById(int id, CancellationToken cancellationToken)
+    {
+        var item = await _tasks.GetByIdAsync(id, cancellationToken);
+        if (item is null)
         {
-            _logger = logger;
-            _tasks = tasks;
+            return NotFound();
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<TaskItemReadDto>>> GetAll(CancellationToken cancellationToken)
+        return Ok(item);
+    }
+
+    [HttpPost]
+    public async Task<ActionResult<TaskItemReadDto>> Create(TaskItemCreateDto input, CancellationToken cancellationToken)
+    {
+        var created = await _tasks.CreateAsync(input, cancellationToken);
+        return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+    }
+
+    [HttpPut("{id:int}")]
+    public async Task<ActionResult<TaskItemReadDto>> Update(int id, TaskItemUpdateDto input, CancellationToken cancellationToken)
+    {
+        var updated = await _tasks.UpdateAsync(id, input, cancellationToken);
+        if (updated is null)
         {
-            var items = await _tasks.GetAllAsync(cancellationToken);
-            return Ok(items);
+            return NotFound();
         }
+
+        return Ok(updated);
+    }
+
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
+    {
+        var deleted = await _tasks.DeleteAsync(id, cancellationToken);
+        if (!deleted)
+        {
+            return NotFound();
+        }
+
+        return NoContent();
     }
 }
