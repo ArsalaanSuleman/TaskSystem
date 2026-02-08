@@ -1,0 +1,15 @@
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/bin/Debug/net9.0/TaskNotes.Exercises
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/bin/Debug/net9.0/TaskNotes.Exercises.deps.json
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/bin/Debug/net9.0/TaskNotes.Exercises.runtimeconfig.json
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/bin/Debug/net9.0/TaskNotes.Exercises.dll
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/bin/Debug/net9.0/TaskNotes.Exercises.pdb
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/TaskNotes.Exercises.GeneratedMSBuildEditorConfig.editorconfig
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/TaskNotes.Exercises.AssemblyInfoInputs.cache
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/TaskNotes.Exercises.AssemblyInfo.cs
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/TaskNotes.Exercises.csproj.CoreCompileInputs.cache
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/TaskNotes.Exercises.sourcelink.json
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/TaskNotes.Exercises.dll
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/refint/TaskNotes.Exercises.dll
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/TaskNotes.Exercises.pdb
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/TaskNotes.Exercises.genruntimeconfig.cache
+/Users/arsalaansuleman/Desktop/Test/TaskNotes.Exercises/obj/Debug/net9.0/ref/TaskNotes.Exercises.dll
